@@ -1,5 +1,5 @@
 # uPools
- Object Pooling for Unity
+ A lightweight and flexible object pooling system for Unity
 
 <img width="100%" src="https://github.com/AnnulusGames/uPools/blob/main/Assets/uPools/Documentation~/Header.png">
 
