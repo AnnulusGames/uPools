@@ -51,7 +51,7 @@ https://github.com/AnnulusGames/uPools.git?path=/Assets/uPools
 
 ## クイックスタート
 
-`GameObject.Instantiate()`を`SharedGameObjectPool.Rent()`を置き換えるだけでオブジェクトプーリングを行うことができます。
+`Instantiate()`を`SharedGameObjectPool.Rent()`に、`Destroy()`を`SharedGameObjectPool.Return()`に置き換えるだけでオブジェクトプーリングを行うことができます。
 
 ```cs
 using UnityEngine;

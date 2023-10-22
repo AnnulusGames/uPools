@@ -51,7 +51,7 @@ Alternatively, open the Packages/manifest.json file and add the following to the
 
 ## Quick Start
 
-You can easily implement object pooling by replacing `GameObject.Instantiate()` with `SharedGameObjectPool.Rent()`.
+You can implement object pooling by simply replacing `Instantiate()` with `SharedGameObjectPool.Rent()` and `Destroy()` with `SharedGameObjectPool.Return()`.
 
 ```cs
 using UnityEngine;
