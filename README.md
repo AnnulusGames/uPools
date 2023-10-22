@@ -1,7 +1,7 @@
 # uPools
  Object Pooling for Unity
 
-<img width="90%" src="https://github.com/AnnulusGames/uPools/blob/main/Assets/uPools/Documentation~/Header.png">
+<img width="100%" src="https://github.com/AnnulusGames/uPools/blob/main/Assets/uPools/Documentation~/Header.png">
 
 [![license](https://img.shields.io/badge/LICENSE-MIT-green.svg)](LICENSE)
 
