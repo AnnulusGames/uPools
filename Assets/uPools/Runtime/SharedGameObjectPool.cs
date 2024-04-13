@@ -38,6 +38,9 @@ namespace uPools
             }
 
             cloneReferences.Add(obj, pool);
+
+            PoolCallbackHelper.InvokeOnRent(obj);
+            
             return obj;
         }
 
@@ -64,6 +67,9 @@ namespace uPools
             }
 
             cloneReferences.Add(obj, pool);
+
+            PoolCallbackHelper.InvokeOnRent(obj);
+
             return obj;
         }
 
@@ -90,6 +96,9 @@ namespace uPools
             }
 
             cloneReferences.Add(obj, pool);
+
+            PoolCallbackHelper.InvokeOnRent(obj);
+
             return obj;
         }
 
@@ -117,6 +126,9 @@ namespace uPools
             }
 
             cloneReferences.Add(obj, pool);
+
+            PoolCallbackHelper.InvokeOnRent(obj);
+
             return obj;
         }
 
@@ -148,6 +160,8 @@ namespace uPools
             instance.SetActive(false);
             pool.Push(instance);
             cloneReferences.Remove(instance);
+
+            PoolCallbackHelper.InvokeOnReturn(instance);
         }
 
         public static void Prewarm(GameObject original, int count)
@@ -161,6 +175,8 @@ namespace uPools
                 var obj = UnityEngine.Object.Instantiate(original);
                 obj.SetActive(false);
                 pool.Push(obj);
+
+                PoolCallbackHelper.InvokeOnReturn(obj);
             }
         }
 
