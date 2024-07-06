@@ -12,20 +12,30 @@ namespace uPools
         {
             if (createFunc == null) throw new ArgumentException(nameof(createFunc));
 
+            this.createFunc = _ => createFunc();
+            this.onRent = onRent;
+            this.onReturn = onReturn;
+            this.onDestroy = onDestroy;
+        }
+        
+        public AsyncObjectPool(Func<CancellationToken, UniTask<T>> createFunc, Action<T> onRent = null, Action<T> onReturn = null, Action<T> onDestroy = null)
+        {
+            if (createFunc == null) throw new ArgumentException(nameof(createFunc));
+
             this.createFunc = createFunc;
             this.onRent = onRent;
             this.onReturn = onReturn;
             this.onDestroy = onDestroy;
         }
 
-        readonly Func<UniTask<T>> createFunc;
+        readonly Func<CancellationToken, UniTask<T>> createFunc;
         readonly Action<T> onRent;
         readonly Action<T> onReturn;
         readonly Action<T> onDestroy;
 
         protected override UniTask<T> CreateInstanceAsync(CancellationToken cancellationToken)
         {
-            return createFunc();
+            return createFunc(cancellationToken);
         }
 
         protected override void OnDestroy(T instance)
